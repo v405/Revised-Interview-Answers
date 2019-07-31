@@ -67,9 +67,9 @@ public class Tests {
 
     @Test
     public void duplicatesTest2() {
-        String input = "7;0343215";
+        String input = "7;0344251";
 
-        int expected = 0;
+        int expected = 4;
         int actual = main.duplicates(input);
 
         Assert.assertEquals(expected, actual);

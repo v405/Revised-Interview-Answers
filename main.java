@@ -1,6 +1,8 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.HashSet;
+import java.util.Set;
 
 public class main{
     public static void main(String[] args) throws IOException{
@@ -81,7 +83,25 @@ public class main{
         return reverse;
     }
 
-    public static Integer duplicates(String input){
-        return null;
+    public static Integer duplicates(String input) {
+
+
+        // Initializing Variables
+        int duplicate = 0;
+        String[] strArray = input.split(";");
+        int lenArray = Integer.parseInt(strArray[0])-1;
+        Set setA = new HashSet();
+
+        // Looping through the second half of the input to find duplicates
+        // Set does not take duplicates so when the output is false then we had found the duplicate
+        for (int i = 0; i <= lenArray; i++) {
+            if (setA.add(strArray[1].charAt(i)) == false){
+                // Convert character to integer
+                duplicate = Character.getNumericValue(strArray[1].charAt(i));
+            }else{
+                setA.add(strArray[1].charAt(i));
+            }
+        }
+        return duplicate;
     }
 }
